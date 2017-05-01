@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BookShop</string>
+    <string name="head">BookShop</string>
+    <string name="user">USER : </string>
+    <string name="pass">PASSWORD : </string>
+    <string name="login">LOGIN</string>
+</resources>
