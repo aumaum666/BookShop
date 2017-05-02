@@ -1,11 +1,16 @@
 package comsci.kalin.bookshop;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.StringBuilderPrinter;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -23,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private UserTABLE objUserTABLE;
     private BookTABLE objBookTABLE;
+    String nameString;
+    String user = "bookshop";
+    String pass = "1234";
 
 
 
@@ -35,12 +43,34 @@ public class MainActivity extends AppCompatActivity {
         //testAddValue();
         //synJSONtoSQLite();
 
+        Button button = (Button) findViewById(R.id.button);
+        final EditText editText = (EditText) findViewById(R.id.editText);
+        final EditText editText2 = (EditText) findViewById(R.id.editText2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                if (editText.equals(user) == true) {
+                    Intent startIntent = new Intent(MainActivity.this, TypeBook.class);
+                    startActivity(startIntent);
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Wrong Username & Password", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     private void connectedSQLite(){
         objBookTABLE = new BookTABLE(this);
         objUserTABLE = new UserTABLE(this);
     }
+
+    public void onClickRegister (View view) {
+        Intent intent = new Intent(MainActivity.this, Register.class);
+        startActivity(intent);
+    }
+
     /*private void testAddValue(){
         objUserTABLE.addNewUser("testUser","testPass","testName","testAddress");
         objBookTABLE.addNewBook("testBook","testType","testPrice");

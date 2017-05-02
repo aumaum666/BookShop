@@ -24,9 +24,8 @@
         <activity android:name=".TypeBook" />
         <activity android:name=".ShowBook" />
         <activity android:name=".Detail" />
-        <activity android:name=".Register"></activity>
-
-
+        <activity android:name=".Register" />
+        <activity android:name=".Shop"></activity>
     </application>
 
 </manifest>

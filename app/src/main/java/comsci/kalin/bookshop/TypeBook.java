@@ -12,9 +12,9 @@ public class TypeBook extends AppCompatActivity {
 
     //Explicit
     ListView listView;
-    private int[] ints = new int[]{R.drawable.a1, R.drawable.b2, R.drawable.c3};
+    private int[] ints = new int[]{R.drawable.op, R.drawable.toe,R.drawable.net,R.drawable.know};
 
-    private String[] titleStrings, detailStrings;
+    private String[] titleStrings, detailStrings,shorts,price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +27,18 @@ public class TypeBook extends AppCompatActivity {
 
         titleStrings = getResources().getStringArray(R.array.title);
         detailStrings = getResources().getStringArray(R.array.detail);
+        shorts = getResources().getStringArray(R.array.shorts);
+        price = getResources().getStringArray(R.array.price);
 
-        Myadepter myadepter = new Myadepter(TypeBook.this,ints,titleStrings);
 
-        listView.setAdapter(myadepter);
+
+        //create ListView
+
+        Myadepter myAdepter = new Myadepter(TypeBook.this, ints, titleStrings,shorts );
+        listView.setAdapter(myAdepter);
 
         //Active when click List View link go to detail
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -42,6 +48,7 @@ public class TypeBook extends AppCompatActivity {
                 intent.putExtra("Title", titleStrings[position]);
                 intent.putExtra("Detail", detailStrings[position]);
                 intent.putExtra("Image", ints[position]);
+                intent.putExtra("Price",ints[position]);
                 startActivity(intent);
 
             }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="comsci.kalin.bookshop.TypeBook">
 
     <TextView
@@ -16,7 +17,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="@string/head"
+        android:textColor="#69f251"
         android:textSize="@dimen/h1"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +32,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="-232dp"
+        android:background="#c8ffffff"
         app:layout_constraintBottom_toTopOf="@+id/btnback"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -44,8 +48,10 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:background="@android:color/background_dark"
         android:onClick="btnback"
-        android:text="Button"
+        android:text="Logout"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

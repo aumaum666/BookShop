@@ -19,19 +19,21 @@ public class Myadepter extends BaseAdapter {
     //Eplicit
     private Context context ;
     private int[] ints ;
-    private String[] titleStrings,detailStrings ;
+    private String[] titleStrings,detailStrings,price ;
 
     //Alt + Insert add Constuctor for implement method
 
-    public Myadepter(TypeBook typeBook, int[] ints, String[] titleStrings) {
+    public Myadepter(Context context, int[] ints, String[]titleStrings, String[]detailStrings) {
         this.context = context ;
         this.ints = ints ;
         this.titleStrings = titleStrings ;
         this.detailStrings = detailStrings ;
+        this.price = price;
     }
 
     @Override
-    public int getCount() {
+    public int getCount() { // user sum information for show then send to getview
+
         return ints.length;
     }
 
@@ -63,5 +65,4 @@ public class Myadepter extends BaseAdapter {
         detailTextView.setText(detailStrings[position]);
         return view;
     }
-
-}
+}   /* Main Class*/
