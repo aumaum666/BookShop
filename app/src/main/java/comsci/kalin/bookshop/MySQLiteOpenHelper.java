@@ -35,8 +35,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String B_ID = BaseColumns._ID;
     public static final String B_NAME = "BookName";
     public static final String B_TYPE = "BookType";
+    public static final String B_SOURCE = "BookSource";
     public static final String B_PRICE = "BookPrice";
-    public String CREATE_BOOK_TABLE = "create table "+TABLE_B+" ("+B_ID+" integer primary key autoincrement, "+B_NAME+" text, "+B_TYPE+" text, "+B_PRICE+" text);";
+    public String CREATE_BOOK_TABLE = "create table "+TABLE_B+" ("+B_ID+" integer primary key autoincrement, "+B_NAME+" text, "+B_TYPE+" text, "+B_SOURCE+" text, "+B_PRICE+" text);";
 
     public MySQLiteOpenHelper(Context context) {
         super(context, DataBase_Name, null, DataBase_Version);

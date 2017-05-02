@@ -14,9 +14,10 @@ public class BookTABLE {
 
     public static final String TABLE_B = "bookTABLE";
     public static final String B_ID = "_id";
-    public static final String B_NAME = "Name";
-    public static final String B_TYPE = "Type";
-    public static final String B_PRICE = "Price";
+    public static final String B_NAME = "BookName";
+    public static final String B_TYPE = "BookType";
+    public static final String B_SOURCE = "BookSource";
+    public static final String B_PRICE = "BookPrice";
 
     public BookTABLE(Context context){
         objMySQLiteOpenHelper = new MySQLiteOpenHelper(context);
@@ -24,11 +25,12 @@ public class BookTABLE {
         readSqLiteDatabase = objMySQLiteOpenHelper.getReadableDatabase();
     }
 
-    public long addNewBook(String strName, String strType, String strPrice){
+    public long addNewBook (String strName, String strType, String strPrice, String strSource){
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(B_NAME, strName);
         objContentValues.put(B_TYPE, strType);
         objContentValues.put(B_PRICE, strPrice);
+        objContentValues.put(B_SOURCE, strSource);
         return readSqLiteDatabase.insert(TABLE_B, null, objContentValues);
     }
 }
